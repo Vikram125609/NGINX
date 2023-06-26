@@ -48,4 +48,20 @@ and default port for https : 443
 ✅ Understanding Configurations ✅
 The configuration of nginx is in a special structure that is tree.
 All block is also called as context
-Each context has a specific setting and we can override in the 
+Each context has a specific setting and we can override in the child block
+the most top level block is called as main context
+
+when the nginx run it has one master process and some worker processes which is used for handling the connection
+now what will be number of worker process that configuration will be done in the main context 
+
+main (i) => no. of worker process (ii) user name (iii) pid (iV) log location 
+
+event block in main => (i) no. of connections per worker process 🔥 Can be change for optimization on the production side as per the server capacity and many more such setting 
+stream block in main => (i) the comming request can by tcp or udp. The setting related to the network layer and transport layer will be done in this context 
+http block in main (very important and most used) => (i) how to process the request (ii) There can be multiple server blocks
+
+Two main block in the http context
+server block in http => (i) Creating virtual server in it or Creating virtual host. When we host multiple site of different domain on our server so all the setting is done in the server block
+upstream block in http => (i) Upstream block is utilized when we use reverse-proxy. We are sending request to the nginx but in the backgroung the nginx send requests to the server this is called reverse proxy (ii) Can also be used for load balancing
+
+location block in server => (i) routing of the url  

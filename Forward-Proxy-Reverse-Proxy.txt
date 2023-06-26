@@ -1,0 +1,10 @@
+There are two common types of proxy
+(i) forward proxy
+
+A forward proxy is a server that sits between a group of client machines and internet
+When those client make request to the websites on the internet the forward proxy act as middleman intercepts those request and talk to the web srver on behalf of those client machines 
+
+Why would anyone want to do that ?
+Few common reasons
+(i) A forward proxy protect the client's online identity. By using a forward proxy to connect to a website the ip address of the client is hidden from the server. Only the ip address of the proxy is visible to the servers. It would be harder to trace back to the client
+(ii) A forward proxy can be used to bypass browsing restriction. Some institution like government schools and big bussiness use firwall to restrict access to the internet. By Connecting to the forward proxy outside the firewall the client machine get pottentially get around these restrictions 
