@@ -14,3 +14,38 @@ in the directory file nginx.conf is very important file and it is the entry poin
 
 include /etc/nginx/modules-enabled/*.conf;
 ⬆️ In the above line the "include" is called as directive in nginx this will embed the file as the path given in front of include 
+
+in the directory /etc/nginx/sites-enabled file default
+"listen" is also an directive 
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    root /var/www/html;
+    index index.html index.htm index.nginx-debian.html;
+    server_name _;
+    location / {
+            # First attempt to serve request as file, then
+            # as directory, then fall back to displaying a 404.
+            try_files $uri $uri/ =404;
+    }
+}
+
+listen 80 default_server => This statement indicate that the all the connection on port 80 will be managed by this server block
+listen 80 default_server => This statement is for IPv4
+listen [::]:80 default_server => This statement is for IPv6
+root inside the server block is also an directive 
+server_name is also an directive 
+there is also an location block in the server block
+
+now what is happening when the request is comming on port 80 
+it says go to the location which is written in front of the root directive 
+and in that location the index or the main file can be index.html index.htm index.nginx-debain.html
+so initally when you hit the request on port 80 nginx will serve the page index.nginx-debain.html which is present in the /var/www/html 
+
+default http port is 80 
+and default port for https : 443
+
+✅ Understanding Configurations ✅
+The configuration of nginx is in a special structure that is tree.
+All block is also called as context
+Each context has a specific setting and we can override in the 
