@@ -1,0 +1,16 @@
+Nginx is a web server.
+All the request will be served by the Nginx
+Nginx can be used as gateway, reverse proxy, caching, rate limiting, load balancing, host static sites, host multiple sites, tls termination.
+
+Nginx is very extandable. we can use our own custom logic and custom functionality using the Lua language script
+even you can write javascript in the nginx by using njs
+
+there is a special folder All the configuration in the linux machine and the external application is getting stored in the cd /etc/
+
+all the files in the cd /etc/nginx will be different as per the operating system 
+
+in the directory file nginx.conf is very important file and it is the entry point of nginx. it start from this file only when nginx start
+
+
+include /etc/nginx/modules-enabled/*.conf;
+⬆️ In the above line the "include" is called as directive in nginx this will embed the file as the path given in front of include 
