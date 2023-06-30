@@ -1,0 +1,13 @@
+This file will be the entry point for the nginx
+The content which is out of all the three blocks is the main file content
+user: kis user se humara nginx process start hua hai
+worker_processes: it should be auto but it can be equal to no. of core count for eg 4
+
+
+events {
+    worker_connections: 768 => No of connections in each worker_processes
+}
+
+http {
+    
+}
